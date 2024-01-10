@@ -1,0 +1,1 @@
+fitAIM - solo project
