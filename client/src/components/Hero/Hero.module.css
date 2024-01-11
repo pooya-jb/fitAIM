@@ -1,0 +1,27 @@
+.hero {
+  margin-top: 2rem;
+}
+
+.moto h2 {
+  font-size: 3.2rem;
+  color: rgb(0, 32, 0);
+  text-shadow: 1px 2px 10px rgb(177, 226, 150);
+  text-rendering: geometricPrecision;
+}
+
+.moto p {
+  color: rgb(100, 100, 100);
+  font-size: 1.6rem;
+}
+.row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.user {
+  width: 25%;
+}
+
+.AI {
+  width: 100%;
+}

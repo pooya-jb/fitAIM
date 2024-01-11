@@ -1,0 +1,12 @@
+/* #root {
+  margin: 0 auto;
+} */
+
+.navbar {
+  box-shadow: 1px 3px 10px #00aa00ac;
+  background-color: rgb(255, 255, 255);
+}
+
+.hero {
+  margin-top: 2rem;
+}
