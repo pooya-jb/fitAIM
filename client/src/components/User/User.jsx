@@ -1,24 +1,25 @@
+import BodyShape from './BodyShape/BodyShape';
+import Information from './Information/Inoformation';
 import classes from './User.module.css';
+import { useState } from 'react';
+import { createContext } from 'react';
+
+export const UserContext = createContext();
 
 const User = () => {
-  const submitHandler = (e) => {
-    e.preventDefault();
-  };
-
+  const [step, setStep] = useState('information');
+  const [user, setUser] = useState({
+    age: '',
+    height: '',
+    weight: '',
+    gender: '',
+    bodyShape: '',
+  });
   return (
-    <form className={classes.form} onSubmit={submitHandler}>
-      <label htmlFor='age'>Age</label>
-      <input type='number' name='age' id='age' min={1} max={120} />
-      <label htmlFor='height'>Height</label>
-      <input type='number' name='height' id='height' min={50} max={250} />
-      <label htmlFor='weight'>Weight</label>
-      <input type='number' name='weight' id='weight' min={3} max={300} />
-      <label htmlFor='gender'>Gender</label>
-      <select name='gender' id='gender'>
-        <option value='female'>Female</option>
-        <option value='male'>Male</option>
-      </select>
-    </form>
+    <UserContext.Provider className={classes.user} value={{ user, setUser }}>
+      {step === 'information' && <Information changeStep={setStep} />}
+      {step === 'bodyShape' && <BodyShape changeStep={setStep} />}
+    </UserContext.Provider>
   );
 };
 
