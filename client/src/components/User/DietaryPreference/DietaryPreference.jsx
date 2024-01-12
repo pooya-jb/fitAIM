@@ -34,7 +34,7 @@ const DietaryPreference = (props) => {
           <input
             type='radio'
             name='dietary'
-            value='omivore'
+            value='omnivore'
             checked={dietaryPreference === 'omnivore'}
             onChange={handleBodyShapeChange}
             required
