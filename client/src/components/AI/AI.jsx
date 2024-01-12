@@ -10,10 +10,17 @@ const questions = [
 
 const AI = () => {
   return (
-    <div>
-      {questions.map((q, index) => (
-        <Question question={q} key={index} />
-      ))}
+    <div className={classes.AI}>
+      <h2 className={classes.h2}>
+        Leverage the power of AI
+        <br />
+        to lead you on your fitness journey!
+      </h2>
+      <div className={classes.questions}>
+        {questions.map((q, index) => (
+          <Question question={q} key={index} />
+        ))}
+      </div>
     </div>
   );
 };

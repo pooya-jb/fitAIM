@@ -1,8 +1,16 @@
+.information {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 55rem;
+}
 .form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  width: 20rem;
+  width: 30rem;
 }
 
 .form label {

@@ -19,10 +19,10 @@ function App() {
   }, []);
   return (
     <div className={classes.app}>
-      <div className={classes.navbar}>
+      {/* <div className={classes.navbar}>
         <Navbar />
       </div>
-      <p>Hey{res}</p>
+      <p>Hey{res}</p> */}
       <div className={`${classes.hero}`}>
         <Hero />
       </div>

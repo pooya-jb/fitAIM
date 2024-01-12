@@ -1,0 +1,19 @@
+.AI {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.h2 {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+}

@@ -4,8 +4,7 @@ const Question = (prop) => {
   return (
     <div>
       <div className={classes.questions}>
-        <h2>{question}</h2>
-        <p>Answer comes from ChatGpt API</p>
+        <h2 className={classes.question}>{question}</h2>
       </div>
     </div>
   );

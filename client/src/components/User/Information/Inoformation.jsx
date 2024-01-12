@@ -1,6 +1,7 @@
 import classes from './Information.module.css';
 import { useState, useContext } from 'react';
 import { UserContext } from '../User';
+import information from '../../../assets/information.svg';
 
 const Information = (props) => {
   const { user, setUser } = useContext(UserContext);
@@ -46,57 +47,61 @@ const Information = (props) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={submitHandler}>
-      <label htmlFor='age'>Age</label>
-      <input
-        type='number'
-        name='age'
-        id='age'
-        min={1}
-        max={120}
-        value={age}
-        onChange={changeHandler}
-        required
-      />
-      <label htmlFor='height'>Height</label>
-      <input
-        type='number'
-        name='height'
-        id='height'
-        min={50}
-        max={250}
-        value={height}
-        onChange={changeHandler}
-        required
-      />
-      <label htmlFor='weight'>Weight</label>
-      <input
-        type='number'
-        name='weight'
-        id='weight'
-        min={3}
-        max={300}
-        value={weight}
-        onChange={changeHandler}
-        required
-      />
-      <label htmlFor='gender'>Gender</label>
-      <select
-        name='gender'
-        id='gender'
-        value={gender}
-        onChange={changeHandler}
-        required
-      >
-        <option value=''>Select Gender</option>
-        <option value='female'>Female</option>
-        <option value='male'>Male</option>
-      </select>
-      <button className={classes.submitBtn} type='submit'>
-        Next
-      </button>
-      <p className={classes.btnCaption}>Let AI guide you</p>
-    </form>
+    <div className={classes.information}>
+      <img className={classes.img} src={information} alt='sport' />
+
+      <form className={classes.form} onSubmit={submitHandler}>
+        <label htmlFor='age'>Age</label>
+        <input
+          type='number'
+          name='age'
+          id='age'
+          min={1}
+          max={120}
+          value={age}
+          onChange={changeHandler}
+          required
+        />
+        <label htmlFor='height'>Height</label>
+        <input
+          type='number'
+          name='height'
+          id='height'
+          min={50}
+          max={250}
+          value={height}
+          onChange={changeHandler}
+          required
+        />
+        <label htmlFor='weight'>Weight</label>
+        <input
+          type='number'
+          name='weight'
+          id='weight'
+          min={3}
+          max={300}
+          value={weight}
+          onChange={changeHandler}
+          required
+        />
+        <label htmlFor='gender'>Gender</label>
+        <select
+          name='gender'
+          id='gender'
+          value={gender}
+          onChange={changeHandler}
+          required
+        >
+          <option value=''>Select Gender</option>
+          <option value='female'>Female</option>
+          <option value='male'>Male</option>
+        </select>
+        <button className={classes.submitBtn} type='submit'>
+          Next
+        </button>
+        <p className={classes.btnCaption}>Let AI guide you</p>
+      </form>
+    </div>
   );
 };
 
