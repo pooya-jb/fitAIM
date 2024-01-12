@@ -5,6 +5,9 @@ const SECRET_KEY = process.env.SECRET_KEY || 'development key';
 
 const login = async (req, res) => {
   const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).send({ error: '400', message: 'Missing fields!' });
+  }
   try {
     const user = await UserModel.findOne({ email: email });
     const checkPassword = await bcrypt.compare(password, user.password);
@@ -39,7 +42,7 @@ const register = async (req, res) => {
     const accessToken = jwt.sign({ _id }, SECRET_KEY);
     res.status(201).send({ accessToken });
   } catch (error) {
-    res.tstaus(400).send({ error, message: 'COuld not creat user!' });
+    res.tstaus(400).send({ error, message: 'COuld not register user!' });
   }
 };
 

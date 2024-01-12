@@ -4,6 +4,7 @@ const DB_NAME = process.env.DB_NAME || 'fitaim';
 
 mongoose.connect(
   `mongodb://127.0.0.1:${DB_PORT}/${DB_NAME}`
+  // callback is not supported any more!
   // ,
   // { useNewUrlParser: true, useUnidiedTopology: true }
   // (err) => {
