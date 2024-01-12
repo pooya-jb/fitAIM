@@ -3,9 +3,6 @@ import Navbar from './components/Navbar/Navbar';
 
 import classes from './App.module.css';
 import Hero from './components/Hero/Hero';
-import { createContext } from 'react';
-
-const userContext = createContext();
 
 function App() {
   return (

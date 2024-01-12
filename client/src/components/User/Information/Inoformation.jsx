@@ -12,7 +12,7 @@ const Information = (props) => {
   const { changeStep } = props;
 
   const changeHandler = (e) => {
-    console.log(e.target.name);
+    // console.log(e.target.name);
     switch (e.target.name) {
       case 'age':
         setAge(e.target.value);
@@ -34,12 +34,12 @@ const Information = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log({
-      age,
-      height,
-      weight,
-      gender,
-    });
+    // console.log({
+    //   age,
+    //   height,
+    //   weight,
+    //   gender,
+    // });
     changeStep('bodyShape');
     setUser({ ...user, age, height, weight, gender });
     console.log(user);

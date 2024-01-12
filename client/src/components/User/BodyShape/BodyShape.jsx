@@ -1,6 +1,6 @@
 import classes from './BodyShape.module.css';
-import maleBodyShape from '../../../assets/male.png';
-import femaleBodyShape from '../../../assets/female.png';
+import maleBodyShape from '../../../assets/male-svg.svg';
+import femaleBodyShape from '../../../assets/female-svg.svg';
 import { useState, useContext } from 'react';
 import { UserContext } from '../User';
 
@@ -22,7 +22,7 @@ const BodyShape = (props) => {
     e.preventDefault();
     console.log(bodyShape);
     setUser({ ...user, bodyShape });
-    changeStep('');
+    changeStep('goal');
   };
   return (
     <div className={classes.bodyShape}>
@@ -77,8 +77,8 @@ const BodyShape = (props) => {
           <input
             type='radio'
             name='bodyShape'
-            value='invertedTriangle'
-            checked={bodyShape === 'invertedTriangle'}
+            value='inverted triangle'
+            checked={bodyShape === 'inverted triangle'}
             onChange={handleBodyShapeChange}
           />
         </label>
