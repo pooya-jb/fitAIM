@@ -4,11 +4,10 @@
   gap: 2rem;
 }
 
-.h2 {
-  font-size: 2.4rem;
-  text-align: center;
+.ask {
+  width: 20rem;
+  align-self: center;
 }
-
 .questions {
   display: flex;
   flex-direction: column;
