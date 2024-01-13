@@ -27,7 +27,7 @@ const Workout = (props) => {
     <div className={classes.workout}>
       <img src={workoutpic} alt='workout' className={classes.img} />
       <form className={classes.form} onSubmit={submitHandler}>
-        <h2>Where do you prefer to workout?</h2>
+        <p className={classes.question}>Where do you prefer to workout?</p>
         <label>
           <input
             type='radio'

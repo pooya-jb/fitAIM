@@ -29,7 +29,7 @@ const DietaryPreference = (props) => {
     <div className={classes.dietary}>
       <img src={dietary} alt='body shape' className={classes.img} />
       <form className={classes.form} onSubmit={submitHandler}>
-        <h2>What is your dietary preference?</h2>
+        <p className={classes.question}>What is your dietary preference?</p>
         <label>
           <input
             type='radio'

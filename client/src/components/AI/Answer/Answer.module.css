@@ -1,4 +1,24 @@
 .answer p {
   color: var(--dark-grey-color);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.answer span {
+  font-size: 1.8rem;
+  color: rgb(87, 87, 87);
+  font-weight: 200;
+}
+
+.pointer {
+  animation: pointer 1s step-end infinite;
+}
+
+@keyframes pointer {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }

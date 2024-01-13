@@ -49,3 +49,8 @@
   color: gray;
   margin-top: -0.7rem;
 }
+
+.login {
+  background: none;
+  border: 1px solid var(--dark-green-color);
+}

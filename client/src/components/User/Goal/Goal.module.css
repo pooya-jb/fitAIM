@@ -3,7 +3,7 @@
   display: flex;
 }
 
-.bodyShapeImg {
+.goalImg {
   width: 45rem;
 }
 
@@ -16,8 +16,10 @@
   position: relative;
 }
 
-.form h2 {
-  font-size: 2rem;
+.question {
+  font-size: 2.2rem;
+  color: var(--dark-grey-color);
+  font-weight: 400;
 }
 
 .form label {

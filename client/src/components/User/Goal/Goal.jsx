@@ -28,10 +28,10 @@ const Goal = (props) => {
       <img
         src={user.gender === 'male' ? goalMale : goalFemale}
         alt='body shape'
-        className={classes.bodyShapeImg}
+        className={classes.goalImg}
       />
       <form className={classes.form} onSubmit={submitHandler}>
-        <h2>What is your FitAIM?</h2>
+        <p className={classes.question}>What is your FitAIM?</p>
         <label>
           <input
             type='radio'

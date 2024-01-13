@@ -5,12 +5,18 @@
   text-align: center;
 }
 
+.question {
+  font-size: 2.2rem;
+  color: var(--dark-grey-color);
+  font-weight: 400;
+}
+
 .bodyShapeImg {
-  width: 50rem;
+  width: 55rem;
 }
 
 .form {
-  width: 39.7rem;
+  width: 42rem;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;

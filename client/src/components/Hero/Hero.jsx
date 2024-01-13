@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className={`${classes.hero}`}>
       <div className={classes.left}>
-        <div className={classes.moto}>
+        <div className={classes.header}>
           <h2>
             Leverage the power of
             <img className={classes.logo} src={logo} alt='logo FitAIM' />
@@ -19,6 +19,10 @@ const Hero = () => {
             <br />
             Take the first step – your future self will thank you.
           </p>
+          <div className={classes.login}>
+            <span>Already have an account?</span>
+            <button className={classes.loginBtn}>Login</button>
+          </div>
         </div>
         <div className={classes.row}>
           <div className={classes.user}>

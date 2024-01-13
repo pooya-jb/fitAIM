@@ -26,7 +26,9 @@ const BodyShape = (props) => {
   };
   return (
     <div className={classes.bodyShape}>
-      <h2>Which one describes your body shape better?</h2>
+      <p className={classes.question}>
+        Which one describes your body shape better?
+      </p>
       <img
         src={user.gender === 'male' ? maleBodyShape : femaleBodyShape}
         alt='body shape'

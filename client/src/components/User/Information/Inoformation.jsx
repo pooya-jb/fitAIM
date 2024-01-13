@@ -99,7 +99,7 @@ const Information = (props) => {
         <button className={classes.submitBtn} type='submit'>
           Next
         </button>
-        <p className={classes.btnCaption}>Let AI guide you</p>
+        {/* <p className={classes.btnCaption}>Let AI guide you</p> */}
       </form>
     </div>
   );

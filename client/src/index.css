@@ -53,6 +53,7 @@ h1 {
 
 button {
   background-color: var(--light-green-color);
+  transition: all 300ms;
 }
 
 button:hover {
