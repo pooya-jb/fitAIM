@@ -27,7 +27,6 @@
 
 .submitBtn {
   padding: 1rem 0.5rem;
-  background: rgb(127, 167, 127);
   border: none;
   transition: all 300ms;
   border-radius: 0.3rem;
@@ -36,8 +35,4 @@
   /* right: 0;
   top: 0rem;
   transform: translatey(-50%); */
-}
-
-.submitBtn:hover {
-  background-color: rgb(68, 144, 68);
 }

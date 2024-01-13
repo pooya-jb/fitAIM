@@ -1,0 +1,4 @@
+.answer p {
+  color: var(--dark-grey-color);
+  font-size: 1.2rem;
+}

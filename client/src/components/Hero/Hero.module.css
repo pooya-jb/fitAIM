@@ -15,6 +15,11 @@
   width: 40%;
   border-left: 1px solid rgba(96, 96, 96, 0.285);
   padding: 2rem;
+  height: 100vh;
+}
+
+.AI {
+  height: 100%;
 }
 
 .img {

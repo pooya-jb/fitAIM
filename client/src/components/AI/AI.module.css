@@ -1,10 +1,10 @@
 .AI {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  height: 100%;
 }
 
-.ask {
+.askImg {
   width: 20rem;
   align-self: center;
 }
@@ -15,4 +15,16 @@
   justify-self: center;
   align-self: center;
   align-items: center;
+  height: 40%;
+  overflow: scroll;
+  padding: 2rem 3rem;
+}
+
+.answer {
+  height: 45%;
+  margin-top: 2rem;
+  background-color: rgba(240, 248, 255, 0.42);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(128, 128, 128, 0.167);
 }

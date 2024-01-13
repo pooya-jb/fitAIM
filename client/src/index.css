@@ -4,8 +4,11 @@
   font-weight: 400;
 
   /* color-scheme: light dark; */
-  color: #1f1f1f;
+  --dark-grey-color: #1f1f1f;
   background-image: linear-gradient(to right, white, #b3ebc3);
+  --dark-green-color: #1e664b;
+  --light-green-color: #539c81;
+  --border-radius: 0.3rem;
 
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,6 +29,7 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
+  color: var(--dark-grey-color);
 }
 
 .container {
@@ -45,6 +49,15 @@ a:hover {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+button {
+  background-color: var(--light-green-color);
+}
+
+button:hover {
+  background-color: var(--dark-green-color);
+  color: white;
 }
 
 /* @media (prefers-color-scheme: light) {
