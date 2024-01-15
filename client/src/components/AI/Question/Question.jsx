@@ -1,16 +1,18 @@
 import classes from './Question.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setQuestionsAndAnswers } from '../../../redux/userSlice';
-
+import { useState } from 'react';
 const Question = (prop) => {
   const { question } = prop;
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const userInfo = useSelector((state) => state.user.userInfo);
+  const [error, setError] = useState('');
   const dispatch = useDispatch();
 
   const clickHandler = async () => {
     if (!isAuthenticated) {
       console.log('Please login or create your FitAIM');
+      setError('👈Please login or register!');
       return;
     }
     try {
@@ -47,6 +49,13 @@ const Question = (prop) => {
         <button className={classes.questionBtn} onClick={clickHandler}>
           {question}
         </button>
+        <p
+          className={`${classes.error} ${
+            !isAuthenticated ? classes.show : ''
+          } `}
+        >
+          {error}
+        </p>
       </div>
     </div>
   );

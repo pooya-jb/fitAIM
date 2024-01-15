@@ -15,6 +15,9 @@ export const userSlice = createSlice({
     },
     setAuthenticated: (state, action) => {
       state.isAuthenticated = action.payload;
+      if (!action.payload) {
+        state.questionsAndAnswers = [];
+      }
     },
     setQuestionsAndAnswers: (state, action) => {
       state.questionsAndAnswers.push(action.payload);

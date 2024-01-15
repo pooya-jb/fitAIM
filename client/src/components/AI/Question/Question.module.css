@@ -15,3 +15,19 @@
   box-shadow: 0px 2px 5px var(--dark-green-color);
   background-color: var(--light-green-color);
 }
+
+.error {
+  text-align: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  transition: opacity 300ms, max-height 300ms;
+  color: rgb(108, 0, 0);
+}
+
+.show {
+  opacity: 1;
+  max-height: 20px;
+}

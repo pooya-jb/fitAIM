@@ -45,7 +45,6 @@ const Hero = () => {
                   onClick={() => {
                     dispatch(setAuthenticated(false));
                     dispatch(setUserInfo(null));
-                    dispatch(setQuestionsAndAnswers([]));
                   }}
                 >
                   Logout

@@ -1,12 +1,54 @@
-.answer p {
+.chat {
+  height: 100%;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+.chat p {
   color: var(--dark-grey-color);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  overflow: scroll;
 }
 
+.ready {
+  text-align: center;
+}
 .answer span {
   font-size: 1.8rem;
   color: rgb(87, 87, 87);
   font-weight: 200;
+}
+
+.pleaseLogin {
+  text-align: center;
+}
+
+.QandAs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.qanda {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.468);
+  padding-bottom: 1rem;
+}
+
+.question {
+  align-self: flex-end;
+  width: 50%;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  background-color: rgba(2, 97, 50, 0.474);
+}
+
+.answer {
+  width: 80%;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: rgba(36, 184, 137, 0.247);
 }
 
 /* .pointer {
