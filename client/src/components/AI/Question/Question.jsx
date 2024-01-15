@@ -10,15 +10,15 @@ const Question = (prop) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question: 'actual question' }),
+        body: JSON.stringify({ question: question }),
       });
-
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       console.log(response);
       const data = await response.json();
       console.log(data);
+      console.log(data.choices[0].message.content);
     } catch (error) {
       console.error('Error', error);
     }
