@@ -3,14 +3,13 @@ import workoutpic from '../../../assets/workout.svg';
 import { useState, useContext } from 'react';
 import { UserContext } from '../User';
 
-const Workout = (props) => {
-  const { user, setUser } = useContext(UserContext);
-  const [workout, setWorkout] = useState(user.workout);
+const Workout = () => {
+  const { user, setUser, setStep } = useContext(UserContext);
+  const [workout, setWorkout] = useState(user.information.workout);
   console.log(user);
-  const { changeStep } = props;
   const backHanlder = () => {
     console.log('back clicked!');
-    changeStep('dietaryPreference');
+    setStep('dietaryPreference');
   };
 
   const handleBodyShapeChange = (event) => {
@@ -20,7 +19,8 @@ const Workout = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(workout);
-    setUser({ ...user, workout });
+    setUser({ ...user, information: { ...user.information, workout } });
+    setStep('register');
     console.log(user);
   };
   return (

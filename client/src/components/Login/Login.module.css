@@ -1,16 +1,31 @@
-.information {
+.login {
   display: flex;
   align-items: center;
+  gap: 2rem;
+  height: 100%;
+}
+
+.error {
+  height: 5%;
+}
+
+.error p {
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .img {
-  width: 55rem;
+  width: 40rem;
 }
 .form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
   width: 30rem;
+  height: 100%;
+  padding: 1rem;
+  margin-top: 7rem;
 }
 
 .form label {
@@ -35,7 +50,7 @@
   box-shadow: 0px 2px 5px green;
 }
 
-.submitBtn {
+.button {
   padding: 1rem 0.5rem;
   border: none;
   transition: all 300ms;
@@ -43,7 +58,14 @@
   margin-top: 0.7rem;
 }
 
-.login {
+.noAccount {
+  color: gray;
+  font-size: 1.2rem;
+}
+
+.signupBtn {
   background: none;
+  padding: 1rem;
   border: 1px solid var(--dark-green-color);
+  border-radius: var(--border-radius);
 }

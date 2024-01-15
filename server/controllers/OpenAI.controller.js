@@ -36,7 +36,7 @@ const fetchDataAPI = async (req, res) => {
     const responseData = await response.json();
     if (response.ok) {
       console.log(responseData);
-      res.status(response.status).json({ content: responseData });
+      res.status(response.status).json(responseData);
     } else {
       console.error('Error:', responseData.error || 'Unknown Error!');
       res

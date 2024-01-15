@@ -10,10 +10,20 @@ const login = async (req, res) => {
   }
   try {
     const user = await UserModel.findOne({ email: email });
+    if (user) {
+      console.log('User found');
+    }
     const checkPassword = await bcrypt.compare(password, user.password);
-    if (!checkPassword) throw new Error();
+    if (!checkPassword) throw new Error('Password is wrong!');
     const accessToken = jwt.sign({ _id: user._id }, SECRET_KEY);
-    res.tstaus(200).send({ accessToken });
+    res.status(200).send({
+      accessToken,
+      userData: {
+        name: user.name,
+        email: user.email,
+        information: user.information,
+      },
+    });
   } catch (error) {
     console.log('Error finding user:', error);
     res
@@ -24,6 +34,10 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
+  if (!email || !password) {
+    return res.status(400).send({ error: '400', message: 'Missing fields!' });
+  }
   try {
     const user = await UserModel.findOne({ email: email });
     if (user) {
@@ -33,7 +47,7 @@ const register = async (req, res) => {
     }
     if (password === '') throw new Error('Password is missing!');
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({
+    const newUser = new UserModel({
       ...req.body,
       password: hashedPassword,
     });
@@ -42,7 +56,7 @@ const register = async (req, res) => {
     const accessToken = jwt.sign({ _id }, SECRET_KEY);
     res.status(201).send({ accessToken });
   } catch (error) {
-    res.tstaus(400).send({ error, message: 'COuld not register user!' });
+    res.status(400).send({ error, message: 'Could not register user!' });
   }
 };
 

@@ -3,16 +3,15 @@ import dietary from '../../../assets/dietary.svg';
 import { useState, useContext } from 'react';
 import { UserContext } from '../User';
 
-const DietaryPreference = (props) => {
-  const { user, setUser } = useContext(UserContext);
+const DietaryPreference = () => {
+  const { user, setUser, setStep } = useContext(UserContext);
   const [dietaryPreference, setDietaryPreference] = useState(
-    user.dietaryPreference
+    user.information.dietaryPreference
   );
   console.log(user);
-  const { changeStep } = props;
   const backHanlder = () => {
     console.log('back clicked!');
-    changeStep('goal');
+    setStep('goal');
   };
 
   const handleBodyShapeChange = (event) => {
@@ -22,8 +21,11 @@ const DietaryPreference = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(dietaryPreference);
-    setUser({ ...user, dietaryPreference });
-    changeStep('workout');
+    setUser({
+      ...user,
+      information: { ...user.information, dietaryPreference },
+    });
+    setStep('workout');
   };
   return (
     <div className={classes.dietary}>

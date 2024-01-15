@@ -7,8 +7,14 @@ const router = require('./router');
 
 const app = express();
 
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    method: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    credentials: true,
+  })
+);
 app.use(express.json());
-app.use(cors());
 app.use(router);
 
 const PORT = 3000;

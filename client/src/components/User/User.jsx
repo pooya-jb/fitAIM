@@ -6,23 +6,32 @@ import classes from './User.module.css';
 import { useState } from 'react';
 import { createContext } from 'react';
 import Workout from './Workout/Workout';
+import Register from './Register/Register';
 
 export const UserContext = createContext();
 
 const User = () => {
   const [step, setStep] = useState('information');
   const [user, setUser] = useState({
-    age: '',
-    height: '',
-    weight: '',
-    gender: '',
-    bodyShape: '',
-    goal: '',
-    dietaryPreference: '',
-    workout: '',
+    email: '',
+    password: '',
+    name: '',
+    information: {
+      age: '',
+      height: '',
+      weight: '',
+      gender: '',
+      bodyShape: '',
+      goal: '',
+      dietaryPreference: '',
+      workout: '',
+    },
   });
   return (
-    <UserContext.Provider className={classes.user} value={{ user, setUser }}>
+    <UserContext.Provider
+      className={classes.user}
+      value={{ user, setUser, setStep }}
+    >
       {step === 'information' && <Information changeStep={setStep} />}
       {step === 'bodyShape' && <BodyShape changeStep={setStep} />}
       {step === 'goal' && <Goal changeStep={setStep} />}
@@ -30,6 +39,7 @@ const User = () => {
         <DietaryPreference changeStep={setStep} />
       )}
       {step === 'workout' && <Workout changeStep={setStep} />}
+      {step === 'register' && <Register />}
     </UserContext.Provider>
   );
 };

@@ -4,14 +4,13 @@ import femaleBodyShape from '../../../assets/female-svg.svg';
 import { useState, useContext } from 'react';
 import { UserContext } from '../User';
 
-const BodyShape = (props) => {
-  const { user, setUser } = useContext(UserContext);
-  const [bodyShape, setBodyShape] = useState(user.bodyShape);
+const BodyShape = () => {
+  const { user, setUser, setStep } = useContext(UserContext);
+  const [bodyShape, setBodyShape] = useState(user.information.bodyShape);
   console.log(user);
-  const { changeStep } = props;
   const backHanlder = () => {
     console.log('back clicked!');
-    changeStep('information');
+    setStep('information');
   };
 
   const handleBodyShapeChange = (event) => {
@@ -21,8 +20,8 @@ const BodyShape = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(bodyShape);
-    setUser({ ...user, bodyShape });
-    changeStep('goal');
+    setUser({ ...user, information: { ...user.information, bodyShape } });
+    setStep('goal');
   };
   return (
     <div className={classes.bodyShape}>
@@ -30,7 +29,9 @@ const BodyShape = (props) => {
         Which one describes your body shape better?
       </p>
       <img
-        src={user.gender === 'male' ? maleBodyShape : femaleBodyShape}
+        src={
+          user.information.gender === 'male' ? maleBodyShape : femaleBodyShape
+        }
         alt='body shape'
         className={classes.bodyShapeImg}
       />

@@ -14,8 +14,3 @@
   display: flex;
   gap: 1rem;
 }
-
-.form input {
-  background-color: red;
-  padding: 1rem;
-}

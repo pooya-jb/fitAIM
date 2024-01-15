@@ -3,14 +3,13 @@ import goalMale from '../../../assets/goal-male.svg';
 import goalFemale from '../../../assets/goal-female.svg';
 import { useState, useContext } from 'react';
 import { UserContext } from '../User';
-const Goal = (props) => {
-  const { user, setUser } = useContext(UserContext);
-  const [goal, setGoal] = useState(user.goal);
+const Goal = () => {
+  const { user, setUser, setStep } = useContext(UserContext);
+  const [goal, setGoal] = useState(user.information.goal);
   console.log(user);
-  const { changeStep } = props;
   const backHanlder = () => {
     console.log('back clicked!');
-    changeStep('bodyShape');
+    setStep('bodyShape');
   };
 
   const handleBodyShapeChange = (event) => {
@@ -20,13 +19,13 @@ const Goal = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(goal);
-    setUser({ ...user, goal });
-    changeStep('dietaryPreference');
+    setUser({ ...user, information: { ...user.information, goal } });
+    setStep('dietaryPreference');
   };
   return (
     <div className={classes.goal}>
       <img
-        src={user.gender === 'male' ? goalMale : goalFemale}
+        src={user.information.gender === 'male' ? goalMale : goalFemale}
         alt='body shape'
         className={classes.goalImg}
       />

@@ -3,14 +3,12 @@ import { useState, useContext } from 'react';
 import { UserContext } from '../User';
 import information from '../../../assets/information.svg';
 
-const Information = (props) => {
-  const { user, setUser } = useContext(UserContext);
-  const [age, setAge] = useState(user.age);
-  const [height, setHeight] = useState(user.height);
-  const [weight, setWeight] = useState(user.weight);
-  const [gender, setGender] = useState(user.gender);
-
-  const { changeStep } = props;
+const Information = () => {
+  const { user, setUser, setStep } = useContext(UserContext);
+  const [age, setAge] = useState(user.information.age);
+  const [height, setHeight] = useState(user.information.height);
+  const [weight, setWeight] = useState(user.information.weight);
+  const [gender, setGender] = useState(user.information.gender);
 
   const changeHandler = (e) => {
     // console.log(e.target.name);
@@ -41,9 +39,8 @@ const Information = (props) => {
     //   weight,
     //   gender,
     // });
-    changeStep('bodyShape');
-    setUser({ ...user, age, height, weight, gender });
-    console.log(user);
+    setStep('bodyShape');
+    setUser({ ...user, information: { age, height, weight, gender } });
   };
 
   return (
@@ -99,7 +96,6 @@ const Information = (props) => {
         <button className={classes.submitBtn} type='submit'>
           Next
         </button>
-        {/* <p className={classes.btnCaption}>Let AI guide you</p> */}
       </form>
     </div>
   );
