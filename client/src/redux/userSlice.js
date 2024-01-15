@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   userInfo: null,
   isAuthenticated: false,
+  questionsAndAnswers: [],
 };
 
 export const userSlice = createSlice({
@@ -15,11 +16,15 @@ export const userSlice = createSlice({
     setAuthenticated: (state, action) => {
       state.isAuthenticated = action.payload;
     },
+    setQuestionsAndAnswers: (state, action) => {
+      state.questionsAndAnswers.push(action.payload);
+    },
   },
 });
 
 //createSlice creates some actions from reducers
 
-export const { setUserInfo, setAuthenticated } = userSlice.actions;
+export const { setUserInfo, setAuthenticated, setQuestionsAndAnswers } =
+  userSlice.actions;
 
 export default userSlice.reducer;

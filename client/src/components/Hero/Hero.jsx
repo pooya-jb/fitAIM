@@ -3,7 +3,11 @@ import User from '../User/User';
 import classes from './Hero.module.css';
 import logo from '../../assets/BlackLogo-FitAIM.svg';
 import { useSelector, useDispatch } from 'react-redux';
-import { setAuthenticated } from '../../redux/userSlice';
+import {
+  setAuthenticated,
+  setUserInfo,
+  setQuestionsAndAnswers,
+} from '../../redux/userSlice';
 import { useState } from 'react';
 import Login from '../Login/Lgin';
 import UserDashboard from '../UserDashboard/UserDashboard';
@@ -38,7 +42,11 @@ const Hero = () => {
                 </p>
                 <button
                   className={classes.logoutBtn}
-                  onClick={() => dispatch(setAuthenticated(false))}
+                  onClick={() => {
+                    dispatch(setAuthenticated(false));
+                    dispatch(setUserInfo(null));
+                    dispatch(setQuestionsAndAnswers([]));
+                  }}
                 >
                   Logout
                 </button>

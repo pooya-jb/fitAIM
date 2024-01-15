@@ -1,7 +1,18 @@
 import classes from './Question.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { setQuestionsAndAnswers } from '../../../redux/userSlice';
+
 const Question = (prop) => {
   const { question } = prop;
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
+  const userInfo = useSelector((state) => state.user.userInfo);
+  const dispatch = useDispatch();
+
   const clickHandler = async () => {
+    if (!isAuthenticated) {
+      console.log('Please login or create your FitAIM');
+      return;
+    }
     try {
       const response = await fetch('http://localhost:3000/openai', {
         method: 'POST',
@@ -10,7 +21,10 @@ const Question = (prop) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question: question }),
+        body: JSON.stringify({
+          userInfo: userInfo.information,
+          question: question,
+        }),
       });
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -19,6 +33,10 @@ const Question = (prop) => {
       const data = await response.json();
       console.log(data);
       console.log(data.choices[0].message.content);
+      const answer = data.choices[0].message.content;
+      if (response.ok) {
+        dispatch(setQuestionsAndAnswers({ question, answer }));
+      }
     } catch (error) {
       console.error('Error', error);
     }
