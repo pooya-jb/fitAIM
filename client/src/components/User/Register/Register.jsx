@@ -2,6 +2,8 @@ import classes from './Register.module.css';
 import { useContext } from 'react';
 import { UserContext } from '../User';
 import resgister from '../../../assets/register.svg';
+import { useSelector, useDispatch } from 'react-redux';
+import { setAuthenticated } from '../../../redux/userSlice';
 
 const Register = () => {
   const { user, setUser, setStep } = useContext(UserContext);
