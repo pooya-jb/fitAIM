@@ -3,11 +3,15 @@ import { useContext } from 'react';
 import { UserContext } from '../User';
 import resgister from '../../../assets/register.svg';
 import { useSelector, useDispatch } from 'react-redux';
-import { setAuthenticated } from '../../../redux/userSlice';
+import { setAuthenticated, setUserInfo } from '../../../redux/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const { user, setUser, setStep } = useContext(UserContext);
   console.log(user);
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const changeHandler = (e) => {
     // console.log(e.target.name);
@@ -38,8 +42,12 @@ const Register = () => {
     console.log(response);
     const data = await response.json();
     console.log(data);
-    if (response.ok) {
-      setStep('information');
+    console.log(data.userData);
+    if (response.ok && data) {
+      console.log('User registered successfully!');
+      dispatch(setAuthenticated(true));
+      dispatch(setUserInfo(data.userData));
+      navigate('/me');
     }
   };
 

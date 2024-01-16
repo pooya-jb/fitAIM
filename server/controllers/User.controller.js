@@ -52,9 +52,17 @@ const register = async (req, res) => {
       password: hashedPassword,
     });
 
-    const { _id } = await newUser.save();
-    const accessToken = jwt.sign({ _id }, SECRET_KEY);
-    res.status(201).send({ accessToken });
+    const savedUser = await newUser.save();
+    const accessToken = jwt.sign({ _id: savedUser._id }, SECRET_KEY);
+    console.log(savedUser);
+    res.status(201).send({
+      accessToken,
+      userData: {
+        email: savedUser.email,
+        name: savedUser.name,
+        information: savedUser.information,
+      },
+    });
   } catch (error) {
     res.status(400).send({ error, message: 'Could not register user!' });
   }

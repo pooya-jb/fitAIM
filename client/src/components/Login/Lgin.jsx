@@ -9,7 +9,7 @@ const Login = (props) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { setIsLoginFormOpen } = props;
-  const dispacth = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const changeHandler = (e) => {
     // console.log(e.target.name);
@@ -44,8 +44,8 @@ const Login = (props) => {
     }
     if (response.ok) {
       console.log('User logged in');
-      dispacth(setAuthenticated(true));
-      dispacth(setUserInfo(data.userData));
+      dispatch(setAuthenticated(true));
+      dispatch(setUserInfo(data.userData));
       navigate('/me');
     }
   };
