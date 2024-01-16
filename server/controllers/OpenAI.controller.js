@@ -13,7 +13,7 @@ let prompt = 'What is the meaning of fitness?';
 // In your API call, you can set the temperature parameter to control
 // the response length.Higher values may lead to longer responses, and
 //lower values may result in shorter and more focused responses
-const temperature = 0.6;
+const temperature = 0.7;
 const fetchDataAPI = async (req, res) => {
   console.log(req.body);
   const { userInfo, question } = req.body;
@@ -24,7 +24,7 @@ const fetchDataAPI = async (req, res) => {
     messages: [
       {
         role: 'system',
-        content: 'You are a fitness coach.',
+        content: 'You are a fitness coach, and dietitian',
       },
       {
         role: 'user',
