@@ -3,12 +3,14 @@ import login from '../../assets/login.svg';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAuthenticated, setUserInfo } from '../../redux/userSlice';
+import { useNavigate } from 'react-router-dom';
 const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { setIsLoginFormOpen } = props;
   const dispacth = useDispatch();
+  const navigate = useNavigate();
   const changeHandler = (e) => {
     // console.log(e.target.name);
     switch (e.target.name) {
@@ -44,6 +46,7 @@ const Login = (props) => {
       console.log('User logged in');
       dispacth(setAuthenticated(true));
       dispacth(setUserInfo(data.userData));
+      navigate('/me');
     }
   };
 

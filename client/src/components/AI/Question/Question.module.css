@@ -19,7 +19,7 @@
 .error {
   text-align: center;
   opacity: 0;
-  max-height: 0;
+  max-height: 30px;
   overflow: hidden;
   font-size: 1.4rem;
   margin-top: 0.5rem;
@@ -29,5 +29,11 @@
 
 .show {
   opacity: 1;
-  max-height: 20px;
+  max-height: 50px;
+  transition: opacity 300ms, max-height 300ms;
+}
+
+.hidden {
+  opacity: 0;
+  max-height: 0;
 }
