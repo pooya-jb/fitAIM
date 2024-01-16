@@ -1,5 +1,11 @@
+.question {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .questionBtn {
-  width: 40rem;
+  width: 30rem;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.368);
   border: none;
@@ -36,4 +42,30 @@
 .hidden {
   opacity: 0;
   max-height: 0;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  transform: translateY(50%);
+  animation: blinking 3s linear infinite;
+}
+
+.spinner img {
+  width: 5rem;
+}
+
+@keyframes blinking {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
 }

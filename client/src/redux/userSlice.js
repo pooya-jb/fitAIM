@@ -4,6 +4,8 @@ const initialState = {
   userInfo: null,
   isAuthenticated: false,
   questionsAndAnswers: [],
+  dietPlans: [],
+  workoutPlans: [],
 };
 
 export const userSlice = createSlice({
@@ -17,17 +19,30 @@ export const userSlice = createSlice({
       state.isAuthenticated = action.payload;
       if (!action.payload) {
         state.questionsAndAnswers = [];
+        state.userInfo = null;
       }
     },
     setQuestionsAndAnswers: (state, action) => {
       state.questionsAndAnswers.push(action.payload);
+    },
+    setDietPlans: (state, action) => {
+      state.dietPlans.push(action.payload);
+    },
+
+    setWorkoutPlans: (state, action) => {
+      state.workoutPlans.push(action.payload);
     },
   },
 });
 
 //createSlice creates some actions from reducers
 
-export const { setUserInfo, setAuthenticated, setQuestionsAndAnswers } =
-  userSlice.actions;
+export const {
+  setUserInfo,
+  setAuthenticated,
+  setQuestionsAndAnswers,
+  setDietPlans,
+  setWorkoutPlans,
+} = userSlice.actions;
 
 export default userSlice.reducer;

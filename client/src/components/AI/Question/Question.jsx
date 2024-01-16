@@ -1,12 +1,14 @@
 import classes from './Question.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setQuestionsAndAnswers } from '../../../redux/userSlice';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import brain from '../../../assets/brain.svg';
 const Question = (prop) => {
   const { question } = prop;
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const userInfo = useSelector((state) => state.user.userInfo);
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
   // useEffect(() => {}, [error]);
@@ -22,6 +24,7 @@ const Question = (prop) => {
       return;
     }
     try {
+      setIsLoading(true);
       const response = await fetch('http://localhost:3000/openai', {
         method: 'POST',
         credentials: 'include',
@@ -42,8 +45,9 @@ const Question = (prop) => {
       console.log(data);
       console.log(data.choices[0].message.content);
       const answer = data.choices[0].message.content;
-      if (response.ok) {
+      if (response.ok && data) {
         dispatch(setQuestionsAndAnswers({ question, answer }));
+        setIsLoading(false);
       }
     } catch (error) {
       console.error('Error', error);
@@ -53,8 +57,16 @@ const Question = (prop) => {
     <div>
       <div className={classes.question}>
         <button className={classes.questionBtn} onClick={clickHandler}>
-          {question}
+          {question}{' '}
         </button>
+
+        {isLoading ? (
+          <span className={classes.spinner}>
+            <img src={brain} alt='brain' />
+          </span>
+        ) : (
+          ''
+        )}
 
         <p
           className={`${classes.error} ${

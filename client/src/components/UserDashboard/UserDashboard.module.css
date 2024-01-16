@@ -1,6 +1,81 @@
 .userDashboard {
+  display: flex;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 100vw;
 }
 
+.userInfo {
+  width: 18%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--light-green-color),
+    var(--dark-green-color)
+  );
+  color: rgb(255, 255, 255);
+  min-width: 22rem;
+}
+
+.userControl {
+  border-bottom: 1px solid white;
+  background: white;
+  color: var(--dark-green-color);
+  padding: 1rem;
+  border: 1px solid var(--dark-green-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoutBtn {
+  background: none;
+  border: 1px solid var(--dark-green-color);
+  padding: 0.5rem 1.6rem;
+  border-radius: var(--border-radius);
+}
+
+.info {
+  padding: 1rem;
+}
+
+.AI {
+  margin: 0 auto;
+  display: flex;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tabs h2 {
+  color: red;
+  background-image: linear-gradient(
+    to right,
+    var(--light-green-color),
+    var(--dark-green-color)
+  );
+  text-align: center;
+  padding: 1.6rem;
+  color: white;
+}
+
+.dietTab,
+.workoutTab {
+  min-width: 42rem;
+  border: 1px solid gray;
+}
+
+.tipsTab {
+  width: 35rem;
+  padding-top: 2rem;
+}
 .userDashboard p {
   font-size: 1.6rem;
+}
+
+.explain {
+  color: rgb(221, 221, 221);
+  font-size: 0.6rem;
 }

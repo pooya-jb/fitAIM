@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-width: 100%;
 }
 
 .askImg {
@@ -28,4 +29,34 @@
   border-radius: 1rem;
   border: 1px solid rgba(128, 128, 128, 0.643);
   box-shadow: 0px 2px 10px rgba(128, 128, 128, 0.42);
+}
+
+.getPlans {
+  align-self: center;
+  height: 15rem;
+}
+
+.getBtn {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--dark-green-color);
+  border-radius: var(--border-radius);
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  border: none;
+}
+
+.getBtn {
+  cursor: pointer;
+}
+
+.getBtn:hover {
+  background-color: var(--light-green-color);
+}
+
+.error {
+  text-align: center;
+  font-size: 1.4rem;
+  color: rgb(121, 2, 2);
 }
