@@ -3,11 +3,7 @@ import User from '../User/User';
 import classes from './Hero.module.css';
 import logo from '../../assets/BlackLogo-FitAIM.svg';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  setAuthenticated,
-  setUserInfo,
-  setQuestionsAndAnswers,
-} from '../../redux/userSlice';
+import { setAuthenticated, setUserInfo } from '../../redux/userSlice';
 import { useState } from 'react';
 import Login from '../Login/Lgin';
 import UserDashboard from '../UserDashboard/UserDashboard';
@@ -17,7 +13,7 @@ const Hero = () => {
   const userInfo = useSelector((state) => state.user.userInfo);
 
   const dispatch = useDispatch();
-  console.log(isAuthenticated);
+  // console.log(isAuthenticated);
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   return (
     <div className={`${classes.hero}`}>

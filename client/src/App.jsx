@@ -11,15 +11,16 @@ import Hero from './components/Hero/Hero';
 import UserDashboard from './components/UserDashboard/UserDashboard';
 
 function App() {
-  const [res, setRes] = useState('');
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   useEffect(() => {
     const getRes = async () => {
       const res = await fetch('http://localhost:3000');
 
       const data = await res.json();
-      console.log(data);
-      setRes(data);
+      if (data) {
+        console.log('Connected to the server!');
+        console.log(data);
+      }
     };
 
     getRes();

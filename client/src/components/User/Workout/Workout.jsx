@@ -8,7 +8,7 @@ const Workout = () => {
   const [workout, setWorkout] = useState(user.information.workout);
   console.log(user);
   const backHanlder = () => {
-    console.log('back clicked!');
+    // console.log('back clicked!');
     setStep('dietaryPreference');
   };
 
@@ -21,7 +21,7 @@ const Workout = () => {
     console.log(workout);
     setUser({ ...user, information: { ...user.information, workout } });
     setStep('register');
-    console.log(user);
+    // console.log(user);
   };
   return (
     <div className={classes.workout}>

@@ -14,7 +14,7 @@ const questions = [
 
 const AI = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
-  console.log(isAuthenticated);
+  console.log(`isAuthenticated:`, isAuthenticated);
   const [error, setError] = useState('');
   const clickHandler = () => {
     setError('👈 Please login or resgister!');

@@ -10,7 +10,7 @@ const Answer = () => {
 
   const chatRef = useRef();
   useEffect(() => {
-    console.log('Q&A added');
+    // console.log('Q&A added');
     if (chatRef.current) {
       chatRef.current.scrollTop = chatRef.current.scrollHeight;
     }
