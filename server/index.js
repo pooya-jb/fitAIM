@@ -17,8 +17,10 @@ app.use(
 app.use(express.json());
 app.use(router);
 
-const PORT = 3000;
+const PORT = 10000;
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+
+module.exports = app;
