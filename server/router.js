@@ -10,6 +10,10 @@ router.get('', (req, res) => {
   res.json('Welcome to FitAIM server!');
 });
 
+router.get('/test', (req, res) => {
+  res.json('it is test route');
+});
+
 router.post('/register', userController.register);
 router.post('/login', userController.login);
 router.post('/openai', openAIController.fetchDataAPI);
